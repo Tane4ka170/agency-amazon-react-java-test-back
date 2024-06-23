@@ -5,6 +5,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 
 public class AdData {
+
     @NotEmpty(message = "Date is required")
     private String date;
 

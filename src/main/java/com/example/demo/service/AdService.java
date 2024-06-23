@@ -10,25 +10,33 @@ import java.util.stream.Collectors;
 
 @Service
 public class AdService {
-    private List<AdData> adDataList = new ArrayList<>();
+
+    private List<AdData> ads = new ArrayList<>();
 
     public AdService() {
-        adDataList.add(new AdData("2024-06-01", 100));
-        adDataList.add(new AdData("2024-06-02", 200));
-        adDataList.add(new AdData("2024-06-03", 150));
+        // Mock data
+        ads.add(new AdData("2024-06-22", 100));
+        ads.add(new AdData("2024-06-21", 200));
+        ads.add(new AdData("2024-06-20", 150));
     }
 
     public List<AdData> getAllAds(String sortBy, String order) {
-        Comparator<AdData> comparator = Comparator.comparing(AdData::getDate);
+        Comparator<AdData> comparator;
 
-        if ("value".equalsIgnoreCase(sortBy)) {
-            comparator = Comparator.comparing(AdData::getValue);
+        switch (sortBy) {
+            case "value":
+                comparator = Comparator.comparing(AdData::getValue);
+                break;
+            case "date":
+            default:
+                comparator = Comparator.comparing(AdData::getDate);
+                break;
         }
 
         if ("desc".equalsIgnoreCase(order)) {
             comparator = comparator.reversed();
         }
 
-        return adDataList.stream().sorted(comparator).collect(Collectors.toList());
+        return ads.stream().sorted(comparator).collect(Collectors.toList());
     }
 }
