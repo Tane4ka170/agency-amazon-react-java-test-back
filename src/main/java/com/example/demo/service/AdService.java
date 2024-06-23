@@ -15,9 +15,17 @@ public class AdService {
 
     public AdService() {
         // Mock data
-        ads.add(new AdData("2024-06-22", 100));
-        ads.add(new AdData("2024-06-21", 200));
-        ads.add(new AdData("2024-06-20", 150));
+        ads.add(new AdData("2024-06-01", 150));
+        ads.add(new AdData("2024-06-02", 200));
+        ads.add(new AdData("2024-06-03", 250));
+        ads.add(new AdData("2024-06-04", 100));
+        ads.add(new AdData("2024-06-05", 300));
+        ads.add(new AdData("2024-06-06", 175));
+        ads.add(new AdData("2024-06-07", 225));
+        ads.add(new AdData("2024-06-08", 275));
+        ads.add(new AdData("2024-06-09", 125));
+        ads.add(new AdData("2024-06-10", 325));
+        // Add more data if necessary
     }
 
     public List<AdData> getAllAds(String sortBy, String order) {

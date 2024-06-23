@@ -18,6 +18,7 @@ public class AdData {
         this.value = value;
     }
 
+    // Getters and setters
     public String getDate() {
         return date;
     }
